@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FlixRailsApp</title>
+    <title>Flix</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,14 @@
   </head>
 
   <body>
+  <header>
+    <h1>Flix</h1>
+  </header>
+  <div class="content">
     <%= yield %>
+  </div>
+  <footer>
+    Copyright <%= Time.now.year %> <a href="https://jeremy-hastings.com">Jeremy Hastings</a>
+  </footer>
   </body>
 </html>
