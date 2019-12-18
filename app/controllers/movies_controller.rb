@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movie.all
+    @movies = Movie.released
   end
 
   def show
@@ -31,7 +31,7 @@ class MoviesController < ApplicationController
   def destroy
     @movie = Movie.find(params[:id])
     @movie.destroy
-    redirect_to movies_url
+    redirect_to movies_urlmovie = Movie.new(title: "Batman vs. Godzilla", description: "An epic battle between The Caped Crusader and the fire-breathing dinosaur Gojira.", rating: "PG-13", total_gross: 387623910)
 
   end
 
