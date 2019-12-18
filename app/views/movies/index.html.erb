@@ -2,7 +2,8 @@
   <section class="movie">
     <div class="summary">
       <h2>
-        <%= movie.title %>
+        <% # movie same as movie_path(movie) Just passing the parameter. %>
+        <%= link_to movie.title, movie %>
       </h2>
       <h3>
         <%= total_gross(movie) %>
