@@ -31,14 +31,14 @@ class MoviesController < ApplicationController
   def destroy
     @movie = Movie.find(params[:id])
     @movie.destroy
-    redirect_to movies_urlmovie = Movie.new(title: "Batman vs. Godzilla", description: "An epic battle between The Caped Crusader and the fire-breathing dinosaur Gojira.", rating: "PG-13", total_gross: 387623910)
+    redirect_to movies_url
 
   end
 
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :description, :rating, :released_on, :total_gross)
+    params.require(:movie).permit(:title, :description, :rating, :released_on, :total_gross, :director, :duration, :image_file_name)
   end
 
 end
