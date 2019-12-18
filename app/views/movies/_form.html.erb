@@ -1,0 +1,19 @@
+<%= form_with(model: movie, local: true) do | form | %>
+
+  <%= form.label :title %>
+  <%= form.text_field :title, autofocus: true %>
+
+  <%= form.label :description %>
+  <%= form.text_area :description, rows: 10 %>
+
+  <%= form.label :rating %>
+  <%= form.text_field :rating %>
+
+  <%= form.label :released_on %>
+  <%= form.datetime_select :released_on, { start_year: 1900 }, { class: "date" } %>
+
+  <%= form.label :total_gross %>
+  <%= form.number_field :total_gross %>
+
+  <%= form.submit %>
+<% end %>
