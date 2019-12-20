@@ -506,6 +506,10 @@ form:not([class="button_to"]) {
   &.alert {
 		@extend .alert-danger;
   }
+
+  &.danger {
+    background-color: #FFA715;
+  }
 }
 
 // Errors
