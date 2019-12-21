@@ -1,5 +1,13 @@
                                Prefix Verb   URI Pattern                                                                              Controller#Action
                                  root GET    /                                                                                        movies#index
+                        movie_reviews GET    /movies/:movie_id/reviews(.:format)                                                      reviews#index
+                                      POST   /movies/:movie_id/reviews(.:format)                                                      reviews#create
+                     new_movie_review GET    /movies/:movie_id/reviews/new(.:format)                                                  reviews#new
+                    edit_movie_review GET    /movies/:movie_id/reviews/:id/edit(.:format)                                             reviews#edit
+                         movie_review GET    /movies/:movie_id/reviews/:id(.:format)                                                  reviews#show
+                                      PATCH  /movies/:movie_id/reviews/:id(.:format)                                                  reviews#update
+                                      PUT    /movies/:movie_id/reviews/:id(.:format)                                                  reviews#update
+                                      DELETE /movies/:movie_id/reviews/:id(.:format)                                                  reviews#destroy
                                movies GET    /movies(.:format)                                                                        movies#index
                                       POST   /movies(.:format)                                                                        movies#create
                             new_movie GET    /movies/new(.:format)                                                                    movies#new
