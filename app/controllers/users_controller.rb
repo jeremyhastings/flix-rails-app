@@ -38,7 +38,8 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to movies_url, Alert: "Account successfully Deleted!"
+    session[:user_id] = nil
+    redirect_to movies_url, alert: "Account successfully Deleted!"
   end
 
   private
