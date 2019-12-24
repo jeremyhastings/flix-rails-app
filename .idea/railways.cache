@@ -16,6 +16,9 @@
                                       PATCH  /movies/:id(.:format)                                                                    movies#update
                                       PUT    /movies/:id(.:format)                                                                    movies#update
                                       DELETE /movies/:id(.:format)                                                                    movies#destroy
+                          new_session GET    /session/new(.:format)                                                                   sessions#new
+                              session DELETE /session(.:format)                                                                       sessions#destroy
+                                      POST   /session(.:format)                                                                       sessions#create
                                 users GET    /users(.:format)                                                                         users#index
                                       POST   /users(.:format)                                                                         users#create
                              new_user GET    /users/new(.:format)                                                                     users#new
