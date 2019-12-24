@@ -19,6 +19,7 @@
                           new_session GET    /session/new(.:format)                                                                   sessions#new
                               session DELETE /session(.:format)                                                                       sessions#destroy
                                       POST   /session(.:format)                                                                       sessions#create
+                               signin GET    /signin(.:format)                                                                        sessions#new
                                 users GET    /users(.:format)                                                                         users#index
                                       POST   /users(.:format)                                                                         users#create
                              new_user GET    /users/new(.:format)                                                                     users#new
