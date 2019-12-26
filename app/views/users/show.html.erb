@@ -7,12 +7,41 @@
     <%= @user.created_at.strftime("%B %Y") %>
   </p>
 
-    <div class="actions">
-      <% if current_user?(@user) %>
-        <%= link_to "Edit Account", edit_user_path(@user), class: "button edit" %>
-      <% end %>
-      <% if current_user_admin? %>
-        <%= link_to "Delete Account", @user, method: :delete, class: "button delete", data: { confirm: "Are you sure?" } %>
-      <% end %>
-    </div>
+  <div class="actions">
+    <% if current_user?(@user) %>
+      <%= link_to "Edit Account", edit_user_path(@user), class: "button edit" %>
+    <% end %>
+    <% if current_user_admin? %>
+      <%= link_to "Delete Account", @user, method: :delete, class: "button delete", data: { confirm: "Are you sure?" } %>
+    <% end %>
+  </div>
+
+  <% if @reviews.present? %>
+    <h3>Reviews</h3>
+    <% @reviews.each do | review | %>
+      <div class="review">
+        <div class="details">
+          <span class="title">
+            <%= link_to review.movie.title, review.movie %>
+          </span>
+          <%= render "shared/stars", percent: review.stars_as_percent %>
+          <span class="date">
+            <%= time_ago_in_words(review.created_at) %>
+          </span>
+          <p>
+            <%= review.comment %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+<!--  <h3>Reviews</h3>-->
+  <%# @reviews.each do | review | %>
+<!--    <p><%#= review.movie.title %></p>-->
+<!--    <p><%#= review.stars %></p>-->
+<!--    <p><%#= time_ago_in_words(review.created_at) %></p>-->
+<!--    <p><%#= review.comment %></p>-->
+<!--    <hr/>-->
+  <%# end %>
 </section>
