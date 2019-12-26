@@ -36,6 +36,15 @@
     <% end %>
   <% end %>
 
+  <% if @favorite_movies.present? %>
+    <h3>Favorite Movies</h3>
+    <div class="favorite-movies">
+      <% @favorite_movies.each do | movie | %>
+        <%= link_to image_tag(movie.image_file_name), movie %>
+      <% end %>
+    </div>
+  <% end %>
+
 <!--  <h3>Reviews</h3>-->
   <%# @reviews.each do | review | %>
 <!--    <p><%#= review.movie.title %></p>-->

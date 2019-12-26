@@ -8,6 +8,8 @@
                                       PATCH  /movies/:movie_id/reviews/:id(.:format)                                                  reviews#update
                                       PUT    /movies/:movie_id/reviews/:id(.:format)                                                  reviews#update
                                       DELETE /movies/:movie_id/reviews/:id(.:format)                                                  reviews#destroy
+                      movie_favorites POST   /movies/:movie_id/favorites(.:format)                                                    favorites#create
+                       movie_favorite DELETE /movies/:movie_id/favorites/:id(.:format)                                                favorites#destroy
                                movies GET    /movies(.:format)                                                                        movies#index
                                       POST   /movies(.:format)                                                                        movies#create
                             new_movie GET    /movies/new(.:format)                                                                    movies#new
