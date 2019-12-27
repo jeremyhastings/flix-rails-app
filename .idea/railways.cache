@@ -1,5 +1,14 @@
                                Prefix Verb   URI Pattern                                                                              Controller#Action
+                               genres GET    /genres(.:format)                                                                        genres#index
+                                      POST   /genres(.:format)                                                                        genres#create
+                            new_genre GET    /genres/new(.:format)                                                                    genres#new
+                           edit_genre GET    /genres/:id/edit(.:format)                                                               genres#edit
+                                genre GET    /genres/:id(.:format)                                                                    genres#show
+                                      PATCH  /genres/:id(.:format)                                                                    genres#update
+                                      PUT    /genres/:id(.:format)                                                                    genres#update
+                                      DELETE /genres/:id(.:format)                                                                    genres#destroy
                                  root GET    /                                                                                        movies#index
+                      filtered_movies GET    /movies/filter/:filter(.:format)                                                         movies#index
                         movie_reviews GET    /movies/:movie_id/reviews(.:format)                                                      reviews#index
                                       POST   /movies/:movie_id/reviews(.:format)                                                      reviews#create
                      new_movie_review GET    /movies/:movie_id/reviews/new(.:format)                                                  reviews#new
