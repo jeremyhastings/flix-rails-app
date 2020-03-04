@@ -1,6 +1,6 @@
 <section class="movie-details">
   <div class="image">
-    <%= image_tag @movie.image_file_name %>
+    <%= main_image(@movie) %>
     <div class="faves">
       <%# if @favorite %>
         <%#= button_to "♡ Unfave", movie_favorite_path(@movie, @favorite), method: :delete %>
