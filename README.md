@@ -52,19 +52,65 @@ Create a main_image method in MoviesHelper:
 ```ruby
 def main_image(movie)
   if movie.main_image.attached?
-    image_tag movie.main_image
+    image_tag movie.main_image.variant(resize_to_limit: [150, nil])
   else
     image_tag "placeholder.png"
   end
 end
 ```
 
-Use helper for displaying iamge:
+Use helper for displaying image:
 
 ```ruby
 <%= main_image(movie) %>
 ```
 
+Add Validation to Movie Model for image:
+
+```ruby
+validate :acceptable_image
+```
+
+Then create private method in Movie Model:
+
+```ruby
+private
+
+def acceptable_image
+  return unless main_image.attached?
+
+  unless main_imabe.blob.byte_size <= 1.megabyte
+    errors.add(:main_image, "is too big")
+  end
+
+  accetpable_types = ["image/jpeg", "image/png"]
+  unless acceptable_types.include?(main_image.content_type)
+    errors.add(:main_image, "must be a JPEG or PNG")
+  end
+end
+```
+
+Add to Gemfile:
+
+```ruby
+gem 'image_processing', '~> 1.2'
+```
+
+In terminal:
+
+```shell
+$ bundle install
+```
+
+Install Gem for Mac via Homebrew:
+
+```shell
+$ brew install imagemagick
+```
+
+### Encrypt Credentials
+
+### Uploading Files to AWS S3
 
 
 ## Running the tests
